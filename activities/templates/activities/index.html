@@ -11,7 +11,11 @@
 <body>
     <section class="Recorder_base">
         <div>
-            
+            <form action="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" value="Update">
+            </form>
         </div>
     </section>
 </body>
