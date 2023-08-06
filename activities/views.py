@@ -1,20 +1,17 @@
 from django.shortcuts import render, redirect
 from .models import DaysActivities
-from .forms import DayAboutForm
 import matplotlib.pyplot as plt
 from io import BytesIO
 import base64
 
 # Create your views here.
 def homeIndex(request):
-    form = DayAboutForm()
     if request.method == 'POST':
-        form = DayAboutForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('graph_representation')
-    context = {'form': form}
-    return render(request, 'activities/index.html', context)
+        date = request.POST.get('date')
+        list_of_things = request.POST.get('list_of_things')
+        productivity_range = request.POST.get('productivity_range')
+        DaysActivities.objects.create(date=date,list_of_things=list_of_things,productivity_range=productivity_range)
+    return render(request, 'activities/index.html')
 
 def graph_representation(request):
     recordings = DaysActivities.objects.all()
@@ -31,11 +28,11 @@ def graph_representation(request):
     plt.tight_layout()
 
     #save the plot to a BytesIO object to render in the template
-    buffer = BytesIO
+    buffer = BytesIO()
     plt.savefig(buffer, format='png')
     plt.close()
 
     #convert the buffer to base64 encoded string
     graph_image = base64.b64encode(buffer.getvalue()).decode('utf-8')
     context = {'graph_image': graph_image}
-    return render(request, 'graph_representation.html', context)
+    return render(request, 'activities/graph_representation.html', context)
