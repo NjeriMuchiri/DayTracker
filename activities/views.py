@@ -11,6 +11,7 @@ def homeIndex(request):
         list_of_things = request.POST.get('list_of_things')
         productivity_range = request.POST.get('productivity_range')
         DaysActivities.objects.create(date=date,list_of_things=list_of_things,productivity_range=productivity_range)
+        
     return render(request, 'activities/index.html')
 
 def graph_representation(request):

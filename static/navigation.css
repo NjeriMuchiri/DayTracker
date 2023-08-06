@@ -11,9 +11,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 0px 10px;
-    background-color: aquamarine;
+    background: rgba(0,0,0,0.7);
     color: white;
-    height: 6vh;
+    height: 10vh;
 }
 .navigation .links
 {
@@ -23,4 +23,9 @@
 {
     padding: 8px;
     list-style-type: none;
+}
+.navigation .links li a
+{
+    color: #CCCCCC;
+    text-decoration: none;
 }
