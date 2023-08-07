@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -9,15 +8,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{% static 'done_list.css' %}">
     </head>
-    <body>
+    <body class="container">
         <section class="complete">
             <h3>
-                The Completed Things
+                The Completed Things:
             </h3>
         <div class="listdone">
         <ul>
             {% for done in doneList %}
-                    <li>{{done}}</li>
+                    <small><span>Date: </span> {{done.date}}</small>
+                    <li><span>Completed: </span>{{done}}</li>
             {% endfor %}
         </ul>
         </div>

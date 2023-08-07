@@ -4,8 +4,51 @@
     margin: 0;
     box-sizing: border-box;
 }
-.complete
+.container
 {
-   margin-top: 150px;
+    max-width: 100%;
+    background: url(images/bac.jpg)center center/contain no-repeat fixed;
+    top:0;
+    opacity: 0.8;
+    transition: 0.5s;
+}
+.container .complete
+{
+   margin-top: 200px;
    text-align: center;
+   padding: 50px 100px;
+   background-color: rgba(1,1,1,0.8);
+   border: 2px solid #eed202;
+   border-radius: 20px;
+   margin: 100px;
+   max-width: 100%;
+}
+.complete h3
+{
+max-width: 100%;
+color:#ffc40c;
+text-transform: uppercase;
+letter-spacing: 0.8px;
+margin-bottom: 10px;
+}
+.listdone
+{
+    color: #f8f8ff ;
+    letter-spacing: 0.9px;
+    font-weight: 600px;
+}
+.listdone ul
+{
+    list-style-type: none;
+}
+.listdone span
+{
+    margin-right: 7px;
+    color:#fdee00;
+    font-weight: 900px;
+    font-family: cursive; 
+}
+.listdone ul li
+{
+    margin-bottom: 6px;
 }
