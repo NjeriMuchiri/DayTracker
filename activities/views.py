@@ -12,8 +12,14 @@ def homeIndex(request):
         form = DayAboutForm(request.POST)
         if form.is_valid():
             form.save()
+            return redirect("activities:index")
     context = {'form': form}
     return render(request, 'activities/index.html', context)
+
+def listDone(request):
+    doneList = DaysActivities.objects.all()
+    context = {'doneList': doneList}
+    return render(request,'activities/done_list.html', context)
 
 def graph_representation(request):
     recordings = DaysActivities.objects.all()

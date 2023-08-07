@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'done_list.css' %}">
+    </head>
+    <body>
+        <section class="complete">
+            <h3>
+                The Completed Things
+            </h3>
+        <div class="listdone">
+        <ul>
+            {% for done in doneList %}
+                    <li>{{done}}</li>
+            {% endfor %}
+        </ul>
+        </div>
+        </section>
+    </body>
+    </html>
+
+{% endblock content %}
+
+    
