@@ -10,6 +10,7 @@
     background: url(images/banner.jpg)center center/contain no-repeat fixed;
     top:0;
     opacity: 0.8;
+    transition: 0.5s;
 }
 .Recorder_base .formation
 {
@@ -22,9 +23,43 @@
 {
     padding: 100px 200px;
     background-color: rgba(0,0,0,0.7);
+    border: 1px solid #eed202;
+    border-radius: 20px;
+    max-width: 100%;
+    margin-bottom: 100px;
 }
 .formation form label
 {
     color:#eed202;
+    font-size:20px;
 }
+.formation input
+{
+    padding: 10px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid rgba(0,0,0,1);
+    border-radius:10px;
+    box-shadow:10px 5px 15px rgba(0,0,0,0.8);
+}
+@media screen and (max-width: 768px)
+{
+    .banner
+    {
+        width:100%;
+    }
+    .Recorder_base .formation
+    {
+       margin-left: 20px;
+    }
+    .formation form
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-wrap: wrap;
+        margin-bottom: 100px;
+    }
 
+}

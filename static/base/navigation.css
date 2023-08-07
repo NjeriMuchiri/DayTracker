@@ -11,8 +11,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0px 10px;
-    background-color:rgba(0,0,0,0.8);
-    color: white;
+    background-color:rgba(0,0,0,0.9);
     height: auto;
     min-width: 100vw;
     position: fixed;
@@ -30,6 +29,15 @@
 }
 .navigation .links li a
 {
-    color: #CCCCCC;
+    color: #c0c0c0;
     text-decoration: none;
+    font-weight: 800;
+    letter-spacing:0.5px;
+    text-transform: uppercase;
+    transition:0.5s;
 }
+.navigation .links li a:hover
+{
+    color:#f5c71a;
+}
+
