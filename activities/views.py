@@ -1,18 +1,19 @@
 from django.shortcuts import render, redirect
 from .models import DaysActivities
 import matplotlib.pyplot as plt
+from .forms import DayAboutForm
 from io import BytesIO
 import base64
 
 # Create your views here.
 def homeIndex(request):
+    form = DayAboutForm()
     if request.method == 'POST':
-        date = request.POST.get('date')
-        list_of_things = request.POST.get('list_of_things')
-        productivity_range = request.POST.get('productivity_range')
-        DaysActivities.objects.create(date=date,list_of_things=list_of_things,productivity_range=productivity_range)
-        
-    return render(request, 'activities/index.html')
+        form = DayAboutForm(request.POST)
+        if form.is_valid():
+            form.save()
+    context = {'form': form}
+    return render(request, 'activities/index.html', context)
 
 def graph_representation(request):
     recordings = DaysActivities.objects.all()

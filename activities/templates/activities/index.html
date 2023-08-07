@@ -12,7 +12,7 @@
 <body class="banner">
     <section class="Recorder_base">
         <div class="formation">
-            <form action="{% url 'activities:graph_representation' %}" method="post">
+            <form action="{% url 'activities:index' %}" method="post">
                 {% csrf_token %}
                 <label for="date">Date:</label>
                 <input type="date" id="date" name="date" required><br>
@@ -20,7 +20,7 @@
                 <input type="text" id="list_of_things" name="list_of_things" required><br>
                 <label for="productivity_range">Productivity Level Score</label>
                 <input type="number" id="productivity_range" name="productivity_range" required><br>
-                <input type="submit" value="Update">
+                <input class="add-button" type="submit" value="Update">
             </form>
         </div>
     </section>

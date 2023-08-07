@@ -41,6 +41,25 @@
     border: 2px solid rgba(0,0,0,1);
     border-radius:10px;
     box-shadow:10px 5px 15px rgba(0,0,0,0.8);
+    background-color:#da9100 ;
+}
+.formation form .add-button
+{
+    color: #080808;
+    text-transform: uppercase;
+    letter-spacing: 0.85px;
+    font-weight:700;
+    transition: 0.5s;
+}
+#date
+{
+    color: #ffffff;
+    font-weight: 800;
+}
+.formation form .add-button:hover
+{
+    color:#d3d3d3;
+    cursor:pointer;
 }
 @media screen and (max-width: 768px)
 {
@@ -61,5 +80,9 @@
         flex-wrap: wrap;
         margin-bottom: 100px;
     }
-
+.formation form .add-button:hover
+{
+    color:#d3d3d3;
+    cursor:pointer;
+}
 }
