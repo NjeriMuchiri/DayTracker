@@ -4,11 +4,27 @@
     margin: 0;
     box-sizing: border-box;
 }
-.Recorder_base
+.banner
+{
+    max-width: 100%;
+    background: url(images/banner.jpg)center center/contain no-repeat fixed;
+    top:0;
+    opacity: 0.8;
+}
+.Recorder_base .formation
 {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    margin-top: 200px;
+    margin-top:150px;
 }
+.formation form
+{
+    padding: 100px 200px;
+    background-color: rgba(0,0,0,0.7);
+}
+.formation form label
+{
+    color:#eed202;
+}
+
