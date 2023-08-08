@@ -44,3 +44,19 @@ def graph_representation(request):
     graph_image = base64.b64encode(buffer.getvalue()).decode('utf-8')
     context = {'graph_image': graph_image}
     return render(request, 'activities/graph_representation.html', context)
+
+def updateThing(request, pk):
+    updates = DaysActivities.objects.get(id=pk)
+    form = DayAboutForm(request.POST)
+    if form.is_vald():
+        form.save()
+        return redirect('activities: update')
+    context = {'updates': updates}
+    return render(request, 'activities/index.html', context)
+
+def deleteThing(request, pk):
+    rids = DaysActivities.objects.get(id=pk)
+    if request.method == 'POST':
+        rids.delete()
+        return redirect("activities:deleting")
+    return render(request, 'activities/done_list.html', {'rids': rids})

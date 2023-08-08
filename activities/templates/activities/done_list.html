@@ -20,6 +20,19 @@
                     <li><span>Completed: </span>{{done}}</li>
             {% endfor %}
         </ul>
+        <div>
+                    
+            {% for update in updates %}
+            <p>Update.id: {{update.id}}</p>
+        <button><a href="{% url 'activities:update' update.id %}">Update</a></button>
+            {% endfor %}
+                
+                {% for rid in rids %}
+        <a href="{% url 'activities:deleting' rid.id%}">Delete</a>
+                    
+                {% endfor %}
+                    
+        </div>
         </div>
         </section>
     </body>
